@@ -15,6 +15,7 @@ namespace Intertazz
         public Form1()
         {
             InitializeComponent();
+            //Tengo hambre
         }
     }
 }

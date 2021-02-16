@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="59abaff3c72b423da5338a6663c1cf80" Name="Diagram1" ZoomLevel="114" >
+        <EntityTypeShape EntityType="EFIntertazzModel.TipoProducto" Width="2.125" PointX="0.5" PointY="1.25" />
+        <EntityTypeShape EntityType="EFIntertazzModel.Producto" Width="1.5" PointX="6.375" PointY="2.625" />
+        <EntityTypeShape EntityType="EFIntertazzModel.Marca" Width="1.5" PointX="10.25" PointY="0.75" />
+        <AssociationConnector Association="EFIntertazzModel.MarcaProducto" />
+        <EntityTypeShape EntityType="EFIntertazzModel.Facturas" Width="1.5" PointX="6.25" PointY="6.375" />
+        <EntityTypeShape EntityType="EFIntertazzModel.Stock" Width="1.5" PointX="4" PointY="2.875" />
+        <AssociationConnector Association="EFIntertazzModel.ProductoInventario" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="EFIntertazzModel.Precio" Width="1.5" PointX="10.875" PointY="3" />
+        <AssociationConnector Association="EFIntertazzModel.PrecioProducto" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="EFIntertazzModel.Categoria" Width="1.5" PointX="4.875" PointY="0.5" />
+        <AssociationConnector Association="EFIntertazzModel.CategoriaProducto" />
+        <AssociationConnector Association="EFIntertazzModel.TipoProductoProducto" />
+        <EntityTypeShape EntityType="EFIntertazzModel.Inventario" Width="1.5" PointX="1" PointY="5.125" />
+        <AssociationConnector Association="EFIntertazzModel.EntradasProducto" />
+        <EntityTypeShape EntityType="EFIntertazzModel.DetalleFacturas" Width="1.5" PointX="8.375" PointY="4.375" />
+        <AssociationConnector Association="EFIntertazzModel.ProductoDetalleVentas" />
+        <AssociationConnector Association="EFIntertazzModel.PrecioDetalleVentas" />
+        <AssociationConnector Association="EFIntertazzModel.VentasDetalleVentas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

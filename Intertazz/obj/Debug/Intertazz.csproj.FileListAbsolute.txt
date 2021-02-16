@@ -1,0 +1,9 @@
+C:\Users\USER\source\repos\Intertazz\Intertazz\bin\Debug\Intertazz.exe.config
+C:\Users\USER\source\repos\Intertazz\Intertazz\bin\Debug\Intertazz.exe
+C:\Users\USER\source\repos\Intertazz\Intertazz\bin\Debug\Intertazz.pdb
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.Properties.Resources.resources
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.exe
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.pdb

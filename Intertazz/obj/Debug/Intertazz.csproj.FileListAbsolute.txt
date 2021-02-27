@@ -7,3 +7,13 @@ C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.Genera
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.CoreCompileInputs.cache
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.exe
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.pdb
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.csprojAssemblyReference.cache
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.Main.resources
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.Properties.Resources.resources
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.GenerateResource.cache
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.CoreCompileInputs.cache
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.exe
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.pdb
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\Intertazz.exe.config
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\Intertazz.exe
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\Intertazz.pdb

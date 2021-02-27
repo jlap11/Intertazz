@@ -76,5 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intertazz.Data\Intertazz.Data.csproj">
+      <Project>{991a450f-47b8-4685-bd60-4c64a5e951a5}</Project>
+      <Name>Intertazz.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/16/2021 07:47:07
+-- Date Created: 02/27/2021 11:50:13
 -- Generated from EDMX file: C:\Users\USER\source\repos\Intertazz\Intertazz.Data\EFIntertazzModel.edmx
 -- --------------------------------------------------
 
@@ -30,7 +30,8 @@ GO
 -- Creating table 'Marca'
 CREATE TABLE [dbo].[Marca] (
     [IdMarca] int IDENTITY(1,1) NOT NULL,
-    [Nombre] nvarchar(max)  NOT NULL
+    [Nombre] nvarchar(max)  NOT NULL,
+    [Activo] bit  NOT NULL
 );
 GO
 
@@ -39,14 +40,16 @@ CREATE TABLE [dbo].[Facturas] (
     [IdFacturas] bigint IDENTITY(1,1) NOT NULL,
     [Fecha] datetime  NOT NULL,
     [Descuento] float  NOT NULL,
-    [ValorTotal] float  NOT NULL
+    [ValorTotal] float  NOT NULL,
+    [Activo] bit  NOT NULL
 );
 GO
 
 -- Creating table 'Stock'
 CREATE TABLE [dbo].[Stock] (
     [IdInventario] int IDENTITY(1,1) NOT NULL,
-    [Cantidad] int  NOT NULL
+    [Cantidad] int  NOT NULL,
+    [Activo] bit  NOT NULL
 );
 GO
 
@@ -55,6 +58,7 @@ CREATE TABLE [dbo].[Producto] (
     [IdProducto] int IDENTITY(1,1) NOT NULL,
     [Referencia] nvarchar(max)  NOT NULL,
     [Nombre] nvarchar(max)  NOT NULL,
+    [Activo] bit  NOT NULL,
     [Marca_IdMarca] int  NOT NULL,
     [ProductoInventario_Producto_IdInventario] int  NOT NULL,
     [Categoria_IdCategoria] int  NOT NULL,
@@ -67,6 +71,7 @@ GO
 CREATE TABLE [dbo].[Precio] (
     [IdPrecio] int IDENTITY(1,1) NOT NULL,
     [Fecha] datetime  NOT NULL,
+    [Activo] bit  NOT NULL,
     [Producto_IdProducto] int  NOT NULL
 );
 GO
@@ -74,7 +79,8 @@ GO
 -- Creating table 'TipoProducto'
 CREATE TABLE [dbo].[TipoProducto] (
     [IdTipoProcuto] int IDENTITY(1,1) NOT NULL,
-    [Nombre] nvarchar(max)  NOT NULL
+    [Nombre] nvarchar(max)  NOT NULL,
+    [Activo] bit  NOT NULL
 );
 GO
 
@@ -82,7 +88,8 @@ GO
 CREATE TABLE [dbo].[Categoria] (
     [IdCategoria] int IDENTITY(1,1) NOT NULL,
     [Nombre] nvarchar(max)  NOT NULL,
-    [Caja] bit  NOT NULL
+    [Caja] bit  NOT NULL,
+    [Activo] bit  NOT NULL
 );
 GO
 
@@ -90,7 +97,8 @@ GO
 CREATE TABLE [dbo].[Inventario] (
     [IdInventario] int IDENTITY(1,1) NOT NULL,
     [Fecha] datetime  NOT NULL,
-    [Cantidad] int  NOT NULL
+    [Cantidad] int  NOT NULL,
+    [Activo] bit  NOT NULL
 );
 GO
 
@@ -99,6 +107,7 @@ CREATE TABLE [dbo].[DetalleFacturas] (
     [IdDetalleFacturas] bigint IDENTITY(1,1) NOT NULL,
     [ValorDetalle] float  NOT NULL,
     [Cantidad] int  NOT NULL,
+    [Activo] bit  NOT NULL,
     [Producto_IdProducto] int  NOT NULL,
     [Precio_IdPrecio] int  NOT NULL,
     [Facturas_IdFacturas] bigint  NOT NULL

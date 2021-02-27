@@ -17,11 +17,13 @@ namespace Intertazz.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Precio()
         {
+            this.Activo = true;
             this.DetalleVentas = new HashSet<DetalleFacturas>();
         }
     
         public int IdPrecio { get; set; }
         public System.DateTime Fecha { get; set; }
+        public bool Activo { get; set; }
     
         public virtual Producto Producto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

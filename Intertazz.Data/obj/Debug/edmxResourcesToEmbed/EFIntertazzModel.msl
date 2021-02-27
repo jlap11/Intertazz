@@ -1,6 +1,164 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-  <Alias Key="Model" Value="EFIntertazzModel" />
-  <Alias Key="Target" Value="EFIntertazzModel.Store" />
-  <EntityContainerMapping CdmEntityContainer="EFIntertazzModelContainer" StorageEntityContainer="EFIntertazzModelTargetContainer" />
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EFIntertazzModelStoreContainer" CdmEntityContainer="EFIntertazzModelContainer">
+    <EntitySetMapping Name="Marca">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Marca)">
+        <MappingFragment StoreEntitySet="Marca">
+          <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Facturas)">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="IdFacturas" ColumnName="IdFacturas" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Stock)">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Producto)">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Precio">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Precio)">
+        <MappingFragment StoreEntitySet="Precio">
+          <ScalarProperty Name="IdPrecio" ColumnName="IdPrecio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProducto">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.TipoProducto)">
+        <MappingFragment StoreEntitySet="TipoProducto">
+          <ScalarProperty Name="IdTipoProcuto" ColumnName="IdTipoProcuto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Categoria)">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventario">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Inventario)">
+        <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleFacturas">
+      <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.DetalleFacturas)">
+        <MappingFragment StoreEntitySet="DetalleFacturas">
+          <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
+          <ScalarProperty Name="ValorDetalle" ColumnName="ValorDetalle" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MarcaProducto" TypeName="EFIntertazzModel.MarcaProducto" StoreEntitySet="Producto">
+      <EndProperty Name="Marca">
+        <ScalarProperty Name="IdMarca" ColumnName="Marca_IdMarca" />
+      </EndProperty>
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductoInventario" TypeName="EFIntertazzModel.ProductoInventario" StoreEntitySet="Producto">
+      <EndProperty Name="Inventario">
+        <ScalarProperty Name="IdInventario" ColumnName="ProductoInventario_Producto_IdInventario" />
+      </EndProperty>
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PrecioProducto" TypeName="EFIntertazzModel.PrecioProducto" StoreEntitySet="Precio">
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="Producto_IdProducto" />
+      </EndProperty>
+      <EndProperty Name="Precio">
+        <ScalarProperty Name="IdPrecio" ColumnName="IdPrecio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoriaProducto" TypeName="EFIntertazzModel.CategoriaProducto" StoreEntitySet="Producto">
+      <EndProperty Name="Categoria">
+        <ScalarProperty Name="IdCategoria" ColumnName="Categoria_IdCategoria" />
+      </EndProperty>
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TipoProductoProducto" TypeName="EFIntertazzModel.TipoProductoProducto" StoreEntitySet="Producto">
+      <EndProperty Name="TipoProducto">
+        <ScalarProperty Name="IdTipoProcuto" ColumnName="TipoProducto_IdTipoProcuto" />
+      </EndProperty>
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EntradasProducto" TypeName="EFIntertazzModel.EntradasProducto" StoreEntitySet="Producto">
+      <EndProperty Name="Entradas">
+        <ScalarProperty Name="IdInventario" ColumnName="EntradasProducto_Producto_IdInventario" />
+      </EndProperty>
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductoDetalleVentas" TypeName="EFIntertazzModel.ProductoDetalleVentas" StoreEntitySet="DetalleFacturas">
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="Producto_IdProducto" />
+      </EndProperty>
+      <EndProperty Name="DetalleVentas">
+        <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PrecioDetalleVentas" TypeName="EFIntertazzModel.PrecioDetalleVentas" StoreEntitySet="DetalleFacturas">
+      <EndProperty Name="Precio">
+        <ScalarProperty Name="IdPrecio" ColumnName="Precio_IdPrecio" />
+      </EndProperty>
+      <EndProperty Name="DetalleVentas">
+        <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="VentasDetalleVentas" TypeName="EFIntertazzModel.VentasDetalleVentas" StoreEntitySet="DetalleFacturas">
+      <EndProperty Name="Ventas">
+        <ScalarProperty Name="IdFacturas" ColumnName="Facturas_IdFacturas" />
+      </EndProperty>
+      <EndProperty Name="DetalleVentas">
+        <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
 </Mapping>

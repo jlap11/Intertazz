@@ -5,3 +5,8 @@ C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csp
 C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csproj.CoreCompileInputs.cache
 C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.dll
 C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.pdb
+C:\Users\USER\source\repos\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.dll
+C:\Users\USER\source\repos\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\source\repos\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.xml
+C:\Users\USER\source\repos\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csproj.CopyComplete

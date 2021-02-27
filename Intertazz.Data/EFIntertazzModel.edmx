@@ -6,60 +6,61 @@
     <edmx:StorageModels>
     <Schema Namespace="EFIntertazzModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="EFIntertazzModelStoreContainer">
-    <EntitySet Name="MarcaSet" EntityType="EFIntertazzModel.Store.MarcaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FacturasSet" EntityType="EFIntertazzModel.Store.FacturasSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="StockSet" EntityType="EFIntertazzModel.Store.StockSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProductoSet" EntityType="EFIntertazzModel.Store.ProductoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PrecioSet" EntityType="EFIntertazzModel.Store.PrecioSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TipoProductoSet" EntityType="EFIntertazzModel.Store.TipoProductoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CategoriaSet" EntityType="EFIntertazzModel.Store.CategoriaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="InventarioSet" EntityType="EFIntertazzModel.Store.InventarioSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DetalleFacturasSet" EntityType="EFIntertazzModel.Store.DetalleFacturasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Marca" EntityType="EFIntertazzModel.Store.Marca" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Facturas" EntityType="EFIntertazzModel.Store.Facturas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stock" EntityType="EFIntertazzModel.Store.Stock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto" EntityType="EFIntertazzModel.Store.Producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Precio" EntityType="EFIntertazzModel.Store.Precio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoProducto" EntityType="EFIntertazzModel.Store.TipoProducto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categoria" EntityType="EFIntertazzModel.Store.Categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Inventario" EntityType="EFIntertazzModel.Store.Inventario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleFacturas" EntityType="EFIntertazzModel.Store.DetalleFacturas" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="MarcaProducto" Association="EFIntertazzModel.Store.MarcaProducto">
-      <End Role="Marca" EntitySet="MarcaSet" />
-      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Producto" EntitySet="Producto" />
     </AssociationSet>
     <AssociationSet Name="ProductoInventario" Association="EFIntertazzModel.Store.ProductoInventario">
-      <End Role="Producto" EntitySet="ProductoSet" />
-      <End Role="Inventario" EntitySet="StockSet" />
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Inventario" EntitySet="Stock" />
     </AssociationSet>
     <AssociationSet Name="PrecioProducto" Association="EFIntertazzModel.Store.PrecioProducto">
-      <End Role="Precio" EntitySet="PrecioSet" />
-      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="Precio" EntitySet="Precio" />
+      <End Role="Producto" EntitySet="Producto" />
     </AssociationSet>
     <AssociationSet Name="CategoriaProducto" Association="EFIntertazzModel.Store.CategoriaProducto">
-      <End Role="Categoria" EntitySet="CategoriaSet" />
-      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Producto" EntitySet="Producto" />
     </AssociationSet>
     <AssociationSet Name="TipoProductoProducto" Association="EFIntertazzModel.Store.TipoProductoProducto">
-      <End Role="TipoProducto" EntitySet="TipoProductoSet" />
-      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="TipoProducto" EntitySet="TipoProducto" />
+      <End Role="Producto" EntitySet="Producto" />
     </AssociationSet>
     <AssociationSet Name="EntradasProducto" Association="EFIntertazzModel.Store.EntradasProducto">
-      <End Role="Entradas" EntitySet="InventarioSet" />
-      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="Entradas" EntitySet="Inventario" />
+      <End Role="Producto" EntitySet="Producto" />
     </AssociationSet>
     <AssociationSet Name="ProductoDetalleVentas" Association="EFIntertazzModel.Store.ProductoDetalleVentas">
-      <End Role="Producto" EntitySet="ProductoSet" />
-      <End Role="DetalleVentas" EntitySet="DetalleFacturasSet" />
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="DetalleVentas" EntitySet="DetalleFacturas" />
     </AssociationSet>
     <AssociationSet Name="PrecioDetalleVentas" Association="EFIntertazzModel.Store.PrecioDetalleVentas">
-      <End Role="Precio" EntitySet="PrecioSet" />
-      <End Role="DetalleVentas" EntitySet="DetalleFacturasSet" />
+      <End Role="Precio" EntitySet="Precio" />
+      <End Role="DetalleVentas" EntitySet="DetalleFacturas" />
     </AssociationSet>
     <AssociationSet Name="VentasDetalleVentas" Association="EFIntertazzModel.Store.VentasDetalleVentas">
-      <End Role="Ventas" EntitySet="FacturasSet" />
-      <End Role="DetalleVentas" EntitySet="DetalleFacturasSet" />
+      <End Role="Ventas" EntitySet="Facturas" />
+      <End Role="DetalleVentas" EntitySet="DetalleFacturas" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="MarcaSet">
+  <EntityType Name="Marca">
     <Key>
       <PropertyRef Name="IdMarca" />
     </Key>
     <Property Name="IdMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="FacturasSet">
+  <EntityType Name="Facturas">
     <Key>
       <PropertyRef Name="IdFacturas" />
     </Key>
@@ -67,72 +68,80 @@
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="Descuento" Type="float" Nullable="false" />
     <Property Name="ValorTotal" Type="float" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="StockSet">
+  <EntityType Name="Stock">
     <Key>
       <PropertyRef Name="IdInventario" />
     </Key>
     <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="ProductoSet">
+  <EntityType Name="Producto">
     <Key>
       <PropertyRef Name="IdProducto" />
     </Key>
     <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Referencia" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
     <Property Name="Marca_IdMarca" Type="int" Nullable="false" />
     <Property Name="ProductoInventario_Producto_IdInventario" Type="int" Nullable="false" />
     <Property Name="Categoria_IdCategoria" Type="int" Nullable="false" />
     <Property Name="TipoProducto_IdTipoProcuto" Type="int" Nullable="false" />
     <Property Name="EntradasProducto_Producto_IdInventario" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="PrecioSet">
+  <EntityType Name="Precio">
     <Key>
       <PropertyRef Name="IdPrecio" />
     </Key>
     <Property Name="IdPrecio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
     <Property Name="Producto_IdProducto" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="TipoProductoSet">
+  <EntityType Name="TipoProducto">
     <Key>
       <PropertyRef Name="IdTipoProcuto" />
     </Key>
     <Property Name="IdTipoProcuto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="CategoriaSet">
+  <EntityType Name="Categoria">
     <Key>
       <PropertyRef Name="IdCategoria" />
     </Key>
     <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Caja" Type="bit" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="InventarioSet">
+  <EntityType Name="Inventario">
     <Key>
       <PropertyRef Name="IdInventario" />
     </Key>
     <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="DetalleFacturasSet">
+  <EntityType Name="DetalleFacturas">
     <Key>
       <PropertyRef Name="IdDetalleFacturas" />
     </Key>
     <Property Name="IdDetalleFacturas" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ValorDetalle" Type="float" Nullable="false" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
     <Property Name="Producto_IdProducto" Type="int" Nullable="false" />
     <Property Name="Precio_IdPrecio" Type="int" Nullable="false" />
     <Property Name="Facturas_IdFacturas" Type="bigint" Nullable="false" />
   </EntityType>
   <Association Name="MarcaProducto">
-    <End Role="Marca" Type="EFIntertazzModel.Store.MarcaSet" Multiplicity="1" />
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="*" />
+    <End Role="Marca" Type="EFIntertazzModel.Store.Marca" Multiplicity="1" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Marca">
         <PropertyRef Name="IdMarca" />
@@ -143,8 +152,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ProductoInventario">
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="*" />
-    <End Role="Inventario" Type="EFIntertazzModel.Store.StockSet" Multiplicity="1" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="*" />
+    <End Role="Inventario" Type="EFIntertazzModel.Store.Stock" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Inventario">
         <PropertyRef Name="IdInventario" />
@@ -155,8 +164,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PrecioProducto">
-    <End Role="Precio" Type="EFIntertazzModel.Store.PrecioSet" Multiplicity="*" />
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="1" />
+    <End Role="Precio" Type="EFIntertazzModel.Store.Precio" Multiplicity="*" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Producto">
         <PropertyRef Name="IdProducto" />
@@ -167,8 +176,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="CategoriaProducto">
-    <End Role="Categoria" Type="EFIntertazzModel.Store.CategoriaSet" Multiplicity="1" />
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="*" />
+    <End Role="Categoria" Type="EFIntertazzModel.Store.Categoria" Multiplicity="1" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Categoria">
         <PropertyRef Name="IdCategoria" />
@@ -179,8 +188,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TipoProductoProducto">
-    <End Role="TipoProducto" Type="EFIntertazzModel.Store.TipoProductoSet" Multiplicity="1" />
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="*" />
+    <End Role="TipoProducto" Type="EFIntertazzModel.Store.TipoProducto" Multiplicity="1" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TipoProducto">
         <PropertyRef Name="IdTipoProcuto" />
@@ -191,8 +200,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="EntradasProducto">
-    <End Role="Entradas" Type="EFIntertazzModel.Store.InventarioSet" Multiplicity="1" />
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="*" />
+    <End Role="Entradas" Type="EFIntertazzModel.Store.Inventario" Multiplicity="1" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Entradas">
         <PropertyRef Name="IdInventario" />
@@ -203,8 +212,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ProductoDetalleVentas">
-    <End Role="Producto" Type="EFIntertazzModel.Store.ProductoSet" Multiplicity="1" />
-    <End Role="DetalleVentas" Type="EFIntertazzModel.Store.DetalleFacturasSet" Multiplicity="*" />
+    <End Role="Producto" Type="EFIntertazzModel.Store.Producto" Multiplicity="1" />
+    <End Role="DetalleVentas" Type="EFIntertazzModel.Store.DetalleFacturas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Producto">
         <PropertyRef Name="IdProducto" />
@@ -215,8 +224,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PrecioDetalleVentas">
-    <End Role="Precio" Type="EFIntertazzModel.Store.PrecioSet" Multiplicity="1" />
-    <End Role="DetalleVentas" Type="EFIntertazzModel.Store.DetalleFacturasSet" Multiplicity="*" />
+    <End Role="Precio" Type="EFIntertazzModel.Store.Precio" Multiplicity="1" />
+    <End Role="DetalleVentas" Type="EFIntertazzModel.Store.DetalleFacturas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Precio">
         <PropertyRef Name="IdPrecio" />
@@ -227,8 +236,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="VentasDetalleVentas">
-    <End Role="Ventas" Type="EFIntertazzModel.Store.FacturasSet" Multiplicity="1" />
-    <End Role="DetalleVentas" Type="EFIntertazzModel.Store.DetalleFacturasSet" Multiplicity="*" />
+    <End Role="Ventas" Type="EFIntertazzModel.Store.Facturas" Multiplicity="1" />
+    <End Role="DetalleVentas" Type="EFIntertazzModel.Store.DetalleFacturas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ventas">
         <PropertyRef Name="IdFacturas" />
@@ -243,50 +252,50 @@
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EFIntertazzModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="EFIntertazzModelContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="MarcaSet" EntityType="EFIntertazzModel.Marca" />
+          <EntitySet Name="Marca" EntityType="EFIntertazzModel.Marca" />
           <AssociationSet Name="MarcaProducto" Association="EFIntertazzModel.MarcaProducto">
-            <End Role="Marca" EntitySet="MarcaSet" />
-            <End Role="Producto" EntitySet="ProductoSet" />
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <EntitySet Name="FacturasSet" EntityType="EFIntertazzModel.Facturas" />
-          <EntitySet Name="StockSet" EntityType="EFIntertazzModel.Stock" />
-          <EntitySet Name="ProductoSet" EntityType="EFIntertazzModel.Producto" />
+          <EntitySet Name="Facturas" EntityType="EFIntertazzModel.Facturas" />
+          <EntitySet Name="Stock" EntityType="EFIntertazzModel.Stock" />
+          <EntitySet Name="Producto" EntityType="EFIntertazzModel.Producto" />
           <AssociationSet Name="ProductoInventario" Association="EFIntertazzModel.ProductoInventario">
-            <End Role="Producto" EntitySet="ProductoSet" />
-            <End Role="Inventario" EntitySet="StockSet" />
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Inventario" EntitySet="Stock" />
           </AssociationSet>
-          <EntitySet Name="PrecioSet" EntityType="EFIntertazzModel.Precio" />
+          <EntitySet Name="Precio" EntityType="EFIntertazzModel.Precio" />
           <AssociationSet Name="PrecioProducto" Association="EFIntertazzModel.PrecioProducto">
-            <End Role="Precio" EntitySet="PrecioSet" />
-            <End Role="Producto" EntitySet="ProductoSet" />
+            <End Role="Precio" EntitySet="Precio" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <EntitySet Name="TipoProductoSet" EntityType="EFIntertazzModel.TipoProducto" />
-          <EntitySet Name="CategoriaSet" EntityType="EFIntertazzModel.Categoria" />
+          <EntitySet Name="TipoProducto" EntityType="EFIntertazzModel.TipoProducto" />
+          <EntitySet Name="Categoria" EntityType="EFIntertazzModel.Categoria" />
           <AssociationSet Name="CategoriaProducto" Association="EFIntertazzModel.CategoriaProducto">
-            <End Role="Categoria" EntitySet="CategoriaSet" />
-            <End Role="Producto" EntitySet="ProductoSet" />
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
           <AssociationSet Name="TipoProductoProducto" Association="EFIntertazzModel.TipoProductoProducto">
-            <End Role="TipoProducto" EntitySet="TipoProductoSet" />
-            <End Role="Producto" EntitySet="ProductoSet" />
+            <End Role="TipoProducto" EntitySet="TipoProducto" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <EntitySet Name="InventarioSet" EntityType="EFIntertazzModel.Inventario" />
+          <EntitySet Name="Inventario" EntityType="EFIntertazzModel.Inventario" />
           <AssociationSet Name="EntradasProducto" Association="EFIntertazzModel.EntradasProducto">
-            <End Role="Entradas" EntitySet="InventarioSet" />
-            <End Role="Producto" EntitySet="ProductoSet" />
+            <End Role="Entradas" EntitySet="Inventario" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <EntitySet Name="DetalleFacturasSet" EntityType="EFIntertazzModel.DetalleFacturas" />
+          <EntitySet Name="DetalleFacturas" EntityType="EFIntertazzModel.DetalleFacturas" />
           <AssociationSet Name="ProductoDetalleVentas" Association="EFIntertazzModel.ProductoDetalleVentas">
-            <End Role="Producto" EntitySet="ProductoSet" />
-            <End Role="DetalleVentas" EntitySet="DetalleFacturasSet" />
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="DetalleVentas" EntitySet="DetalleFacturas" />
           </AssociationSet>
           <AssociationSet Name="PrecioDetalleVentas" Association="EFIntertazzModel.PrecioDetalleVentas">
-            <End Role="Precio" EntitySet="PrecioSet" />
-            <End Role="DetalleVentas" EntitySet="DetalleFacturasSet" />
+            <End Role="Precio" EntitySet="Precio" />
+            <End Role="DetalleVentas" EntitySet="DetalleFacturas" />
           </AssociationSet>
           <AssociationSet Name="VentasDetalleVentas" Association="EFIntertazzModel.VentasDetalleVentas">
-            <End Role="Ventas" EntitySet="FacturasSet" />
-            <End Role="DetalleVentas" EntitySet="DetalleFacturasSet" />
+            <End Role="Ventas" EntitySet="Facturas" />
+            <End Role="DetalleVentas" EntitySet="DetalleFacturas" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="TipoProducto">
@@ -295,6 +304,7 @@
           </Key>
           <Property Name="IdTipoProcuto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -306,6 +316,7 @@
           <Property Name="Nombre" Type="String" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="EFIntertazzModel.CategoriaProducto" FromRole="Producto" ToRole="Categoria" />
           <NavigationProperty Name="TipoProducto" Relationship="EFIntertazzModel.TipoProductoProducto" FromRole="Producto" ToRole="TipoProducto" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -314,6 +325,7 @@
           <Property Name="IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" />
           <NavigationProperty Name="Producto" Relationship="EFIntertazzModel.MarcaProducto" FromRole="Marca" ToRole="Producto" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="MarcaProducto">
           <End Type="EFIntertazzModel.Marca" Role="Marca" Multiplicity="1" />
@@ -327,6 +339,7 @@
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
           <Property Name="Descuento" Type="Double" Nullable="false" />
           <Property Name="ValorTotal" Type="Double" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -335,6 +348,7 @@
           <Property Name="IdInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Producto" Relationship="EFIntertazzModel.ProductoInventario" FromRole="Inventario" ToRole="Producto" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="ProductoInventario">
           <End Type="EFIntertazzModel.Producto" Role="Producto" Multiplicity="*" />
@@ -348,6 +362,7 @@
           <NavigationProperty Name="Producto" Relationship="EFIntertazzModel.PrecioProducto" FromRole="Precio" ToRole="Producto" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="DetalleVentas" Relationship="EFIntertazzModel.PrecioDetalleVentas" FromRole="Precio" ToRole="DetalleVentas" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="PrecioProducto">
           <End Type="EFIntertazzModel.Precio" Role="Precio" Multiplicity="1" />
@@ -360,6 +375,7 @@
           <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" />
           <Property Name="Caja" Type="Boolean" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="CategoriaProducto">
           <End Type="EFIntertazzModel.Categoria" Role="Categoria" Multiplicity="1" />
@@ -377,6 +393,7 @@
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Producto" Relationship="EFIntertazzModel.EntradasProducto" FromRole="Entradas" ToRole="Producto" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="EntradasProducto">
           <End Type="EFIntertazzModel.Inventario" Role="Entradas" Multiplicity="1" />
@@ -392,6 +409,7 @@
           <Property Name="ValorDetalle" Type="Double" Nullable="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Facturas" Relationship="EFIntertazzModel.VentasDetalleVentas" FromRole="DetalleVentas" ToRole="Ventas" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="ProductoDetalleVentas">
           <End Type="EFIntertazzModel.Producto" Role="Producto" Multiplicity="1" />
@@ -411,85 +429,94 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EFIntertazzModelStoreContainer" CdmEntityContainer="EFIntertazzModelContainer">
-    <EntitySetMapping Name="MarcaSet">
+    <EntitySetMapping Name="Marca">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Marca)">
-        <MappingFragment StoreEntitySet="MarcaSet">
+        <MappingFragment StoreEntitySet="Marca">
           <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FacturasSet">
+    <EntitySetMapping Name="Facturas">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Facturas)">
-        <MappingFragment StoreEntitySet="FacturasSet">
+        <MappingFragment StoreEntitySet="Facturas">
           <ScalarProperty Name="IdFacturas" ColumnName="IdFacturas" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="Descuento" ColumnName="Descuento" />
           <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="StockSet">
+    <EntitySetMapping Name="Stock">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Stock)">
-        <MappingFragment StoreEntitySet="StockSet">
+        <MappingFragment StoreEntitySet="Stock">
           <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ProductoSet">
+    <EntitySetMapping Name="Producto">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Producto)">
-        <MappingFragment StoreEntitySet="ProductoSet">
+        <MappingFragment StoreEntitySet="Producto">
           <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
           <ScalarProperty Name="Referencia" ColumnName="Referencia" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PrecioSet">
+    <EntitySetMapping Name="Precio">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Precio)">
-        <MappingFragment StoreEntitySet="PrecioSet">
+        <MappingFragment StoreEntitySet="Precio">
           <ScalarProperty Name="IdPrecio" ColumnName="IdPrecio" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TipoProductoSet">
+    <EntitySetMapping Name="TipoProducto">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.TipoProducto)">
-        <MappingFragment StoreEntitySet="TipoProductoSet">
+        <MappingFragment StoreEntitySet="TipoProducto">
           <ScalarProperty Name="IdTipoProcuto" ColumnName="IdTipoProcuto" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CategoriaSet">
+    <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Categoria)">
-        <MappingFragment StoreEntitySet="CategoriaSet">
+        <MappingFragment StoreEntitySet="Categoria">
           <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="InventarioSet">
+    <EntitySetMapping Name="Inventario">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.Inventario)">
-        <MappingFragment StoreEntitySet="InventarioSet">
+        <MappingFragment StoreEntitySet="Inventario">
           <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DetalleFacturasSet">
+    <EntitySetMapping Name="DetalleFacturas">
       <EntityTypeMapping TypeName="IsTypeOf(EFIntertazzModel.DetalleFacturas)">
-        <MappingFragment StoreEntitySet="DetalleFacturasSet">
+        <MappingFragment StoreEntitySet="DetalleFacturas">
           <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
           <ScalarProperty Name="ValorDetalle" ColumnName="ValorDetalle" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="MarcaProducto" TypeName="EFIntertazzModel.MarcaProducto" StoreEntitySet="ProductoSet">
+    <AssociationSetMapping Name="MarcaProducto" TypeName="EFIntertazzModel.MarcaProducto" StoreEntitySet="Producto">
       <EndProperty Name="Marca">
         <ScalarProperty Name="IdMarca" ColumnName="Marca_IdMarca" />
       </EndProperty>
@@ -497,7 +524,7 @@
         <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductoInventario" TypeName="EFIntertazzModel.ProductoInventario" StoreEntitySet="ProductoSet">
+    <AssociationSetMapping Name="ProductoInventario" TypeName="EFIntertazzModel.ProductoInventario" StoreEntitySet="Producto">
       <EndProperty Name="Inventario">
         <ScalarProperty Name="IdInventario" ColumnName="ProductoInventario_Producto_IdInventario" />
       </EndProperty>
@@ -505,7 +532,7 @@
         <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PrecioProducto" TypeName="EFIntertazzModel.PrecioProducto" StoreEntitySet="PrecioSet">
+    <AssociationSetMapping Name="PrecioProducto" TypeName="EFIntertazzModel.PrecioProducto" StoreEntitySet="Precio">
       <EndProperty Name="Producto">
         <ScalarProperty Name="IdProducto" ColumnName="Producto_IdProducto" />
       </EndProperty>
@@ -513,7 +540,7 @@
         <ScalarProperty Name="IdPrecio" ColumnName="IdPrecio" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="CategoriaProducto" TypeName="EFIntertazzModel.CategoriaProducto" StoreEntitySet="ProductoSet">
+    <AssociationSetMapping Name="CategoriaProducto" TypeName="EFIntertazzModel.CategoriaProducto" StoreEntitySet="Producto">
       <EndProperty Name="Categoria">
         <ScalarProperty Name="IdCategoria" ColumnName="Categoria_IdCategoria" />
       </EndProperty>
@@ -521,7 +548,7 @@
         <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="TipoProductoProducto" TypeName="EFIntertazzModel.TipoProductoProducto" StoreEntitySet="ProductoSet">
+    <AssociationSetMapping Name="TipoProductoProducto" TypeName="EFIntertazzModel.TipoProductoProducto" StoreEntitySet="Producto">
       <EndProperty Name="TipoProducto">
         <ScalarProperty Name="IdTipoProcuto" ColumnName="TipoProducto_IdTipoProcuto" />
       </EndProperty>
@@ -529,7 +556,7 @@
         <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="EntradasProducto" TypeName="EFIntertazzModel.EntradasProducto" StoreEntitySet="ProductoSet">
+    <AssociationSetMapping Name="EntradasProducto" TypeName="EFIntertazzModel.EntradasProducto" StoreEntitySet="Producto">
       <EndProperty Name="Entradas">
         <ScalarProperty Name="IdInventario" ColumnName="EntradasProducto_Producto_IdInventario" />
       </EndProperty>
@@ -537,7 +564,7 @@
         <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductoDetalleVentas" TypeName="EFIntertazzModel.ProductoDetalleVentas" StoreEntitySet="DetalleFacturasSet">
+    <AssociationSetMapping Name="ProductoDetalleVentas" TypeName="EFIntertazzModel.ProductoDetalleVentas" StoreEntitySet="DetalleFacturas">
       <EndProperty Name="Producto">
         <ScalarProperty Name="IdProducto" ColumnName="Producto_IdProducto" />
       </EndProperty>
@@ -545,7 +572,7 @@
         <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PrecioDetalleVentas" TypeName="EFIntertazzModel.PrecioDetalleVentas" StoreEntitySet="DetalleFacturasSet">
+    <AssociationSetMapping Name="PrecioDetalleVentas" TypeName="EFIntertazzModel.PrecioDetalleVentas" StoreEntitySet="DetalleFacturas">
       <EndProperty Name="Precio">
         <ScalarProperty Name="IdPrecio" ColumnName="Precio_IdPrecio" />
       </EndProperty>
@@ -553,7 +580,7 @@
         <ScalarProperty Name="IdDetalleFacturas" ColumnName="IdDetalleFacturas" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="VentasDetalleVentas" TypeName="EFIntertazzModel.VentasDetalleVentas" StoreEntitySet="DetalleFacturasSet">
+    <AssociationSetMapping Name="VentasDetalleVentas" TypeName="EFIntertazzModel.VentasDetalleVentas" StoreEntitySet="DetalleFacturas">
       <EndProperty Name="Ventas">
         <ScalarProperty Name="IdFacturas" ColumnName="Facturas_IdFacturas" />
       </EndProperty>
@@ -577,6 +604,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
         <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

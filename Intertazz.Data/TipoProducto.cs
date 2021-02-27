@@ -14,7 +14,14 @@ namespace Intertazz.Data
     
     public partial class TipoProducto
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TipoProducto()
+        {
+            this.Activo = true;
+        }
+    
         public int IdTipoProcuto { get; set; }
         public string Nombre { get; set; }
+        public bool Activo { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Intertazz.Data;
 
 namespace Intertazz
 {
@@ -16,6 +17,15 @@ namespace Intertazz
         {
             InitializeComponent();
             //Tengo hambre
+
+            //Bussiness obj = new Bussiness();
+            //Producto producto = new Producto();
+            //Marca marca = new Marca();
+            //producto.Marca = marca;
+            //producto.Nombre = "Holi";
+
+            //obj.CrearProducto(producto);
+
         }
     }
 }

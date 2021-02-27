@@ -25,14 +25,14 @@ namespace Intertazz.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Marca> MarcaSet { get; set; }
-        public virtual DbSet<Facturas> FacturasSet { get; set; }
-        public virtual DbSet<Stock> StockSet { get; set; }
-        public virtual DbSet<Producto> ProductoSet { get; set; }
-        public virtual DbSet<Precio> PrecioSet { get; set; }
-        public virtual DbSet<TipoProducto> TipoProductoSet { get; set; }
-        public virtual DbSet<Categoria> CategoriaSet { get; set; }
-        public virtual DbSet<Inventario> InventarioSet { get; set; }
-        public virtual DbSet<DetalleFacturas> DetalleFacturasSet { get; set; }
+        public virtual DbSet<Marca> Marca { get; set; }
+        public virtual DbSet<Facturas> Facturas { get; set; }
+        public virtual DbSet<Stock> Stock { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<Precio> Precio { get; set; }
+        public virtual DbSet<TipoProducto> TipoProducto { get; set; }
+        public virtual DbSet<Categoria> Categoria { get; set; }
+        public virtual DbSet<Inventario> Inventario { get; set; }
+        public virtual DbSet<DetalleFacturas> DetalleFacturas { get; set; }
     }
 }

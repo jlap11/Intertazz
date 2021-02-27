@@ -324,7 +324,6 @@
           </Key>
           <Property Name="IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" />
-          <NavigationProperty Name="Producto" Relationship="EFIntertazzModel.MarcaProducto" FromRole="Marca" ToRole="Producto" />
           <Property Name="Activo" Type="Boolean" Nullable="false" DefaultValue="true" />
         </EntityType>
         <Association Name="MarcaProducto">

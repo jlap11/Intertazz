@@ -15,6 +15,7 @@ namespace Intertazz.Formularios
         public Main()
         {
             InitializeComponent();
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

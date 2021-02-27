@@ -44,16 +44,24 @@ namespace Intertazz.Data
 
         }
 
-        public List<Producto> ObtenerProducto(Producto Producto)
+        public List<Producto> ObtenerProducto(Producto Producto = null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.Producto.Where(x => x.IdProducto == Producto.IdProducto).ToList();
+                if (Producto == null)
+                {
+                    var ProductoTodos = from productos in context.Producto
+                                        select productos;
+                    return ProductoTodos.ToList();
+                }
+                else
+                {
+                    return context.Producto.Where(x => x.IdProducto == Producto.IdProducto).ToList();
+                }
             }
 
         }
         #endregion
-
 
         #region CRUD Marca          
         public Marca CrearMarca(Marca Marca)
@@ -69,7 +77,6 @@ namespace Intertazz.Data
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
                 Marca MarcaModificar = context.Marca.Where(x => x.IdMarca == Marca.IdMarca).FirstOrDefault();
-                MarcaModificar.Producto = Marca.Producto;
                 MarcaModificar.Nombre = Marca.Nombre;
                 context.SaveChanges(); return MarcaModificar;
             }
@@ -84,14 +91,24 @@ namespace Intertazz.Data
                 return MarcaModificar;
             }
         }
-        public List<Marca> ObtenerMarca(Marca Marca)
+        public List<Marca> ObtenerMarca(Marca Marca= null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.Marca.Where(x => x.IdMarca == Marca.IdMarca).ToList();
+                if (Marca == null)
+                {
+                    var Marcas = from marcas in context.Marca
+                           select marcas;
+                    return Marcas.ToList();
+                }
+                else
+                {
+                    return context.Marca.Where(x => x.IdMarca == Marca.IdMarca).ToList();
+                }
             }
         }
         #endregion
+
         #region CRUD Facturas          
         public Facturas CrearFacturas(Facturas Facturas)
         {
@@ -121,14 +138,24 @@ namespace Intertazz.Data
                 FacturasModificar.Activo = false; context.SaveChanges(); return FacturasModificar;
             }
         }
-        public List<Facturas> ObtenerFacturas(Facturas Facturas)
+        public List<Facturas> ObtenerFacturas(Facturas Facturas = null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.Facturas.Where(x => x.IdFacturas == Facturas.IdFacturas).ToList();
+                if (Facturas == null) 
+                { 
+                    var FacturasTodas = from facturas in context.Facturas 
+                                 select facturas; 
+                    return FacturasTodas.ToList(); 
+                } 
+                else 
+                { 
+                    return context.Facturas.Where(x => x.IdFacturas == Facturas.IdFacturas).ToList(); 
+                }
             }
         }
         #endregion
+
         #region CRUD Stock          
         public Stock CrearStock(Stock Stock)
         {
@@ -157,12 +184,24 @@ namespace Intertazz.Data
                 StockModificar.Activo = false; context.SaveChanges(); return StockModificar;
             }
         }
-        public List<Stock> ObtenerStock(Stock Stock)
+        public List<Stock> ObtenerStock(Stock Stock= null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
-            { return context.Stock.Where(x => x.IdInventario == Stock.IdInventario).ToList(); }
+            {
+                if (Stock == null)
+                {
+                    var StockTodas = from stock in context.Stock
+                                     select Stock;
+                    return StockTodas.ToList();
+                }
+                else
+                {
+                    return context.Stock.Where(x => x.IdInventario == Stock.IdInventario).ToList();
+                }
+            }
         }
         #endregion
+
         #region CRUD Precio          
         public Precio CrearPrecio(Precio Precio)
         {
@@ -193,14 +232,24 @@ namespace Intertazz.Data
                 return PrecioModificar;
             }
         }
-        public List<Precio> ObtenerPrecio(Precio Precio)
+        public List<Precio> ObtenerPrecio(Precio Precio = null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.Precio.Where(x => x.IdPrecio == Precio.IdPrecio).ToList();
+                if (Precio == null)
+                {
+                    var PrecioTodos = from precio in context.Precio
+                                 select precio;
+                    return PrecioTodos.ToList();
+                }
+                else
+                {
+                    return context.Precio.Where(x => x.IdPrecio == Precio.IdPrecio).ToList();
+                }
             }
         }
         #endregion
+
         #region CRUD TipoProducto          
         public TipoProducto CrearTipoProducto(TipoProducto TipoProducto)
         {
@@ -232,14 +281,24 @@ namespace Intertazz.Data
                 context.SaveChanges(); return TipoProductoModificar;
             }
         }
-        public List<TipoProducto> ObtenerTipoProducto(TipoProducto TipoProducto)
+        public List<TipoProducto> ObtenerTipoProducto(TipoProducto TipoProducto = null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.TipoProducto.Where(x => x.IdTipoProcuto == TipoProducto.IdTipoProcuto).ToList();
+                if (TipoProducto == null)
+                {
+                    var TipoProductoTodos = from tipoProducto in context.TipoProducto
+                                      select tipoProducto;
+                    return TipoProductoTodos.ToList();
+                }
+                else
+                {
+                    return context.TipoProducto.Where(x => x.IdTipoProcuto == TipoProducto.IdTipoProcuto).ToList();
+                }
             }
         }
         #endregion
+
         #region CRUD Categoria          
         public Categoria CrearCategoria(Categoria Categoria)
         {
@@ -268,11 +327,20 @@ namespace Intertazz.Data
                 CategoriaModificar.Activo = false; context.SaveChanges(); return CategoriaModificar; 
             }
         }
-        public List<Categoria> ObtenerCategoria(Categoria Categoria)
+        public List<Categoria> ObtenerCategoria(Categoria Categoria = null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.Categoria.Where(x => x.IdCategoria == Categoria.IdCategoria).ToList();
+                if (Categoria == null)
+                {
+                    var CategoriasTodas = from categorias in context.Categoria
+                                 select  categorias;
+                    return CategoriasTodas.ToList();
+                }
+                else
+                {
+                    return context.Categoria.Where(x => x.IdCategoria == Categoria.IdCategoria).ToList();
+                }
             }
         }
         #endregion
@@ -297,7 +365,7 @@ namespace Intertazz.Data
                 return InventarioModificar; 
             }
         }
-        public Inventario EliminarInventario(Inventario Inventario)
+        public Inventario EliminarInventario(Inventario Inventario= null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             { Inventario InventarioModificar = context.Inventario.Where(x => x.IdInventario == Inventario.IdInventario).FirstOrDefault(); InventarioModificar.Activo = false; context.SaveChanges(); return InventarioModificar; }
@@ -306,7 +374,16 @@ namespace Intertazz.Data
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {
-                return context.Inventario.Where(x => x.IdInventario == Inventario.IdInventario).ToList();
+                if (Inventario == null)
+                {
+                    var InventarioTodos = from inventaros in context.Inventario
+                                 select inventaros;
+                    return InventarioTodos.ToList();
+                }
+                else
+                {
+                    return context.Inventario.Where(x => x.IdInventario == Inventario.IdInventario).ToList();
+                }
             }
         }
         #endregion

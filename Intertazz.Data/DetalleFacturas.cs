@@ -14,9 +14,16 @@ namespace Intertazz.Data
     
     public partial class DetalleFacturas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DetalleFacturas()
+        {
+            this.Activo = true;
+        }
+    
         public long IdDetalleFacturas { get; set; }
         public double ValorDetalle { get; set; }
         public int Cantidad { get; set; }
+        public bool Activo { get; set; }
     
         public virtual Producto Producto { get; set; }
         public virtual Precio Precio { get; set; }

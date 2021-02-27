@@ -53,7 +53,7 @@
     <Compile Include="Categoria.cs">
       <DependentUpon>EFIntertazzModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Bussiness.cs" />
     <Compile Include="DetalleFacturas.cs">
       <DependentUpon>EFIntertazzModel.tt</DependentUpon>
     </Compile>

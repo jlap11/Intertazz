@@ -14,9 +14,16 @@ namespace Intertazz.Data
     
     public partial class Producto
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Producto()
+        {
+            this.Activo = true;
+        }
+    
         public int IdProducto { get; set; }
         public string Referencia { get; set; }
         public string Nombre { get; set; }
+        public bool Activo { get; set; }
     
         public virtual Marca Marca { get; set; }
         public virtual Categoria Categoria { get; set; }

@@ -14,8 +14,15 @@ namespace Intertazz.Data
     
     public partial class Categoria
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Categoria()
+        {
+            this.Activo = true;
+        }
+    
         public int IdCategoria { get; set; }
         public string Nombre { get; set; }
         public bool Caja { get; set; }
+        public bool Activo { get; set; }
     }
 }

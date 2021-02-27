@@ -29,12 +29,6 @@ namespace Intertazz.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.pnlNuevo = new DevExpress.XtraEditors.PanelControl();
-            this.lblErrorCrear = new System.Windows.Forms.Label();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCrearNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,72 +37,16 @@ namespace Intertazz.Formularios
             this.txtConsNombre = new System.Windows.Forms.TextBox();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlNuevo)).BeginInit();
-            this.pnlNuevo.SuspendLayout();
+            this.pnlNuevo = new System.Windows.Forms.Panel();
+            this.lblErrorCrear = new System.Windows.Forms.Label();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCrearNombre = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
+            this.pnlNuevo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(12, 5);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // pnlNuevo
-            // 
-            this.pnlNuevo.Controls.Add(this.lblErrorCrear);
-            this.pnlNuevo.Controls.Add(this.btnCrear);
-            this.pnlNuevo.Controls.Add(this.label2);
-            this.pnlNuevo.Controls.Add(this.txtCrearNombre);
-            this.pnlNuevo.Controls.Add(this.btnNuevo);
-            this.pnlNuevo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNuevo.Location = new System.Drawing.Point(0, 0);
-            this.pnlNuevo.Name = "pnlNuevo";
-            this.pnlNuevo.Size = new System.Drawing.Size(800, 32);
-            this.pnlNuevo.TabIndex = 1;
-            // 
-            // lblErrorCrear
-            // 
-            this.lblErrorCrear.AutoSize = true;
-            this.lblErrorCrear.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblErrorCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorCrear.Location = new System.Drawing.Point(491, 84);
-            this.lblErrorCrear.Name = "lblErrorCrear";
-            this.lblErrorCrear.Size = new System.Drawing.Size(204, 13);
-            this.lblErrorCrear.TabIndex = 8;
-            this.lblErrorCrear.Text = "¡Debe completar todos los campos!";
-            this.lblErrorCrear.Visible = false;
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.Location = new System.Drawing.Point(707, 79);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnCrear.TabIndex = 7;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Nombre";
-            // 
-            // txtCrearNombre
-            // 
-            this.txtCrearNombre.Location = new System.Drawing.Point(136, 42);
-            this.txtCrearNombre.Name = "txtCrearNombre";
-            this.txtCrearNombre.Size = new System.Drawing.Size(100, 21);
-            this.txtCrearNombre.TabIndex = 5;
             // 
             // btnBuscar
             // 
@@ -185,45 +123,101 @@ namespace Intertazz.Formularios
             this.label4.TabIndex = 5;
             this.label4.Text = "Marcas registradas";
             // 
+            // pnlNuevo
+            // 
+            this.pnlNuevo.Controls.Add(this.lblErrorCrear);
+            this.pnlNuevo.Controls.Add(this.btnCrear);
+            this.pnlNuevo.Controls.Add(this.label2);
+            this.pnlNuevo.Controls.Add(this.txtCrearNombre);
+            this.pnlNuevo.Controls.Add(this.btnNuevo);
+            this.pnlNuevo.Location = new System.Drawing.Point(3, 7);
+            this.pnlNuevo.Name = "pnlNuevo";
+            this.pnlNuevo.Size = new System.Drawing.Size(800, 32);
+            this.pnlNuevo.TabIndex = 6;
+            // 
+            // lblErrorCrear
+            // 
+            this.lblErrorCrear.AutoSize = true;
+            this.lblErrorCrear.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblErrorCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblErrorCrear.Location = new System.Drawing.Point(488, 84);
+            this.lblErrorCrear.Name = "lblErrorCrear";
+            this.lblErrorCrear.Size = new System.Drawing.Size(204, 13);
+            this.lblErrorCrear.TabIndex = 13;
+            this.lblErrorCrear.Text = "¡Debe completar todos los campos!";
+            this.lblErrorCrear.Visible = false;
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.Location = new System.Drawing.Point(704, 79);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.TabIndex = 12;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Nombre";
+            // 
+            // txtCrearNombre
+            // 
+            this.txtCrearNombre.Location = new System.Drawing.Point(133, 42);
+            this.txtCrearNombre.Name = "txtCrearNombre";
+            this.txtCrearNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtCrearNombre.TabIndex = 10;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(9, 5);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 9;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
             // frmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlNuevo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pnlNuevo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMarca";
             this.Text = "frmMarca";
-            ((System.ComponentModel.ISupportInitialize)(this.pnlNuevo)).EndInit();
-            this.pnlNuevo.ResumeLayout(false);
-            this.pnlNuevo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
+            this.pnlNuevo.ResumeLayout(false);
+            this.pnlNuevo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnNuevo;
-        private DevExpress.XtraEditors.PanelControl pnlNuevo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConsNombre;
-        private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCrearNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtConsCod;
         private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pnlNuevo;
         private System.Windows.Forms.Label lblErrorCrear;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCrearNombre;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

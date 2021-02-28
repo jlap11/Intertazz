@@ -53,7 +53,29 @@ namespace Intertazz.Formularios
         private void PBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {            
                 ReleaseCapture();
-                SendMessage(this.Handle, 0x112, 0xf012,0);            
+                SendMessage(this.Handle, 0x112, 0xf012,0); 
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmProducto());
+        }
+        private void AbrirFormEnPanel(object formhija)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fh = formhija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fh);
+            this.PContenedor.Tag = fh;
+            fh.Show();
+
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmMarca());
         }
     }
 }

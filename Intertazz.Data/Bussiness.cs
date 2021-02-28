@@ -51,12 +51,13 @@ namespace Intertazz.Data
                 if (Producto == null)
                 {
                     var ProductoTodos = from productos in context.Producto
+                                        where productos.Activo == true
                                         select productos;
                     return ProductoTodos.ToList();
                 }
                 else
                 {
-                    return context.Producto.Where(x => x.IdProducto == Producto.IdProducto).ToList();
+                    return context.Producto.Where(x => x.IdProducto == Producto.IdProducto && x.Activo==true).ToList();
                 }
             }
 
@@ -98,12 +99,20 @@ namespace Intertazz.Data
                 if (Marca == null)
                 {
                     var Marcas = from marcas in context.Marca
+                                 where marcas.Activo==true
                            select marcas;
                     return Marcas.ToList();
                 }
                 else
                 {
-                    return context.Marca.Where(x => x.IdMarca == Marca.IdMarca).ToList();
+                    if (Marca.IdMarca != 0)
+                    {
+                        return context.Marca.Where(x => x.IdMarca == Marca.IdMarca && x.Activo==true).ToList();
+                    }
+                    else
+                    {
+                        return context.Marca.Where(x => x.Nombre.Contains(Marca.Nombre) && x.Activo == true).ToList();
+                    }
                 }
             }
         }
@@ -144,13 +153,14 @@ namespace Intertazz.Data
             {
                 if (Facturas == null) 
                 { 
-                    var FacturasTodas = from facturas in context.Facturas 
-                                 select facturas; 
+                    var FacturasTodas = from facturas in context.Facturas
+                                        where facturas.Activo == true
+                                        select facturas; 
                     return FacturasTodas.ToList(); 
                 } 
                 else 
                 { 
-                    return context.Facturas.Where(x => x.IdFacturas == Facturas.IdFacturas).ToList(); 
+                    return context.Facturas.Where(x => x.IdFacturas == Facturas.IdFacturas && x.Activo == true).ToList(); 
                 }
             }
         }
@@ -191,12 +201,13 @@ namespace Intertazz.Data
                 if (Stock == null)
                 {
                     var StockTodas = from stock in context.Stock
+                                     where stock.Activo == true
                                      select Stock;
                     return StockTodas.ToList();
                 }
                 else
                 {
-                    return context.Stock.Where(x => x.IdInventario == Stock.IdInventario).ToList();
+                    return context.Stock.Where(x => x.IdInventario == Stock.IdInventario && x.Activo == true).ToList();
                 }
             }
         }
@@ -239,12 +250,13 @@ namespace Intertazz.Data
                 if (Precio == null)
                 {
                     var PrecioTodos = from precio in context.Precio
-                                 select precio;
+                                      where precio.Activo == true
+                                      select precio;
                     return PrecioTodos.ToList();
                 }
                 else
                 {
-                    return context.Precio.Where(x => x.IdPrecio == Precio.IdPrecio).ToList();
+                    return context.Precio.Where(x => x.IdPrecio == Precio.IdPrecio && x.Activo == true).ToList();
                 }
             }
         }
@@ -288,12 +300,13 @@ namespace Intertazz.Data
                 if (TipoProducto == null)
                 {
                     var TipoProductoTodos = from tipoProducto in context.TipoProducto
-                                      select tipoProducto;
+                                            where tipoProducto.Activo == true
+                                            select tipoProducto;
                     return TipoProductoTodos.ToList();
                 }
                 else
                 {
-                    return context.TipoProducto.Where(x => x.IdTipoProcuto == TipoProducto.IdTipoProcuto).ToList();
+                    return context.TipoProducto.Where(x => x.IdTipoProcuto == TipoProducto.IdTipoProcuto && x.Activo == true).ToList();
                 }
             }
         }
@@ -334,12 +347,13 @@ namespace Intertazz.Data
                 if (Categoria == null)
                 {
                     var CategoriasTodas = from categorias in context.Categoria
-                                 select  categorias;
+                                          where categorias.Activo == true
+                                          select  categorias;
                     return CategoriasTodas.ToList();
                 }
                 else
                 {
-                    return context.Categoria.Where(x => x.IdCategoria == Categoria.IdCategoria).ToList();
+                    return context.Categoria.Where(x => x.IdCategoria == Categoria.IdCategoria && x.Activo == true).ToList();
                 }
             }
         }
@@ -377,12 +391,13 @@ namespace Intertazz.Data
                 if (Inventario == null)
                 {
                     var InventarioTodos = from inventaros in context.Inventario
-                                 select inventaros;
+                                          where inventaros.Activo == true
+                                          select inventaros;
                     return InventarioTodos.ToList();
                 }
                 else
                 {
-                    return context.Inventario.Where(x => x.IdInventario == Inventario.IdInventario).ToList();
+                    return context.Inventario.Where(x => x.IdInventario == Inventario.IdInventario && x.Activo == true).ToList();
                 }
             }
         }

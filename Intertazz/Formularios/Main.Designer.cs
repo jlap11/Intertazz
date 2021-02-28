@@ -36,6 +36,10 @@ namespace Intertazz.Formularios
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.PMenuVertical = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnPagos = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,10 +49,6 @@ namespace Intertazz.Formularios
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PContenedor = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnPagos = new System.Windows.Forms.Button();
             this.PBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -146,6 +146,58 @@ namespace Intertazz.Formularios
             this.PMenuVertical.Size = new System.Drawing.Size(220, 615);
             this.PMenuVertical.TabIndex = 1;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel5.Location = new System.Drawing.Point(11, 278);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 31);
+            this.panel5.TabIndex = 10;
+            // 
+            // btnPagos
+            // 
+            this.btnPagos.BackColor = System.Drawing.Color.Black;
+            this.btnPagos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPagos.FlatAppearance.BorderSize = 0;
+            this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagos.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagos.Location = new System.Drawing.Point(21, 241);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnPagos.Size = new System.Drawing.Size(173, 31);
+            this.btnPagos.TabIndex = 9;
+            this.btnPagos.Text = "Pagos";
+            this.btnPagos.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.Location = new System.Drawing.Point(11, 241);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 31);
+            this.panel4.TabIndex = 8;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.Black;
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(20, 278);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnReportes.Size = new System.Drawing.Size(188, 31);
+            this.btnReportes.TabIndex = 7;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
@@ -197,6 +249,7 @@ namespace Intertazz.Formularios
             this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel1
             // 
@@ -223,6 +276,7 @@ namespace Intertazz.Formularios
             this.btnInventario.TabIndex = 1;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // pictureBox1
             // 
@@ -241,58 +295,6 @@ namespace Intertazz.Formularios
             this.PContenedor.Name = "PContenedor";
             this.PContenedor.Size = new System.Drawing.Size(1080, 615);
             this.PContenedor.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.Location = new System.Drawing.Point(11, 241);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 31);
-            this.panel4.TabIndex = 8;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.BackColor = System.Drawing.Color.Black;
-            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(20, 278);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnReportes.Size = new System.Drawing.Size(188, 31);
-            this.btnReportes.TabIndex = 7;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel5.Location = new System.Drawing.Point(11, 278);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 31);
-            this.panel5.TabIndex = 10;
-            // 
-            // btnPagos
-            // 
-            this.btnPagos.BackColor = System.Drawing.Color.Black;
-            this.btnPagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPagos.FlatAppearance.BorderSize = 0;
-            this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagos.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagos.Location = new System.Drawing.Point(21, 241);
-            this.btnPagos.Name = "btnPagos";
-            this.btnPagos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnPagos.Size = new System.Drawing.Size(173, 31);
-            this.btnPagos.TabIndex = 9;
-            this.btnPagos.Text = "Pagos";
-            this.btnPagos.UseVisualStyleBackColor = false;
             // 
             // Main
             // 

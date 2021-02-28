@@ -26,9 +26,10 @@ namespace Intertazz.Formularios
             dgvMarcas.DataSource = obj.ObtenerMarca();
             dgvMarcas.Columns["Activo"].Visible=false;
             dgvMarcas.Columns["IdMarca"].HeaderText = "Cod. Marca";
+            dgvMarcas.Columns["IdMarca"].ReadOnly =true;
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void btnCrear_Click_1(object sender, EventArgs e)
         {
             if (txtCrearNombre.Text.Trim() != "")
             {
@@ -36,9 +37,11 @@ namespace Intertazz.Formularios
                 Marca marca = new Marca();
                 marca.Nombre = txtCrearNombre.Text.Trim();
                 marca = obj.CrearMarca(marca);
-                MessageBox.Show( "Se ha registrado la marca: " + marca.Nombre + " con código " + marca.IdMarca.ToString(), "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarConsultaInicial();
                 txtCrearNombre.Text = "";
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(25000, "¡Registrado!", "Registro insertado correctamente",
+                    ToolTipIcon.Info);
             }
             else
             {
@@ -46,7 +49,7 @@ namespace Intertazz.Formularios
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             if (btnNuevo.Text == "Nuevo")
             {
@@ -63,9 +66,62 @@ namespace Intertazz.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Marca marca = new Marca();
-            marca.Nombre = txtConsNombre.Text;
-            marca.IdMarca = Convert.ToInt32(txtConsCod.Text);
+            marca.Nombre = txtConsNombre.Text.Trim();
+            marca.IdMarca = Convert.ToInt32(txtConsCod.Text.Trim()=="" ? "0" : txtConsCod.Text.Trim());
             dgvMarcas.DataSource= obj.ObtenerMarca(marca);
+            dgvMarcas.Columns["IdMarca"].HeaderText = "Cod. Marca";
+            dgvMarcas.Columns["IdMarca"].ReadOnly = true;
         }
+
+        private void txtConsCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtConsCod_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlCod_Click(object sender, EventArgs e)
+        {
+            txtConsNombre.Enabled = false;
+            pnlCod.BackColor= Color.LightBlue;
+            pnlAtr.BackColor = Color.Transparent;
+            txtConsCod.Enabled = true;
+        }
+
+        private void pnlAtr_Click(object sender, EventArgs e)
+        {
+            txtConsCod.Enabled = false;
+            pnlAtr.BackColor = Color.LightBlue;
+            pnlCod.BackColor = Color.Transparent;
+            txtConsNombre.Enabled = true;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Marca marca = new Marca();
+            marca.IdMarca = Convert.ToInt32(dgvMarcas.CurrentRow.Cells[0].Value.ToString());
+            marca.Nombre = dgvMarcas.CurrentRow.Cells[1].Value.ToString();
+            obj.ActualizarMarca(marca);
+            CargarConsultaInicial();
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(25000, "¡Modificado!", "Registro modificado correctamente",
+                ToolTipIcon.Info);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Marca marca = new Marca();
+            marca.IdMarca = Convert.ToInt32(dgvMarcas.CurrentRow.Cells[0].Value.ToString());
+            marca.Nombre = dgvMarcas.CurrentRow.Cells[1].Value.ToString();
+            obj.EliminarMarca(marca);
+            CargarConsultaInicial();
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(25000, "¡Eliminado!", "Registro eliminado correctamente",
+                ToolTipIcon.Info);
+        }
+
     }
 }

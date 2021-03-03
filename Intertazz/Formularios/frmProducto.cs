@@ -67,5 +67,10 @@ namespace Intertazz.Formularios
             marca.IdMarca = Convert.ToInt32(txtConsCod.Text);
             dgvMarcas.DataSource= obj.ObtenerMarca(marca);
         }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

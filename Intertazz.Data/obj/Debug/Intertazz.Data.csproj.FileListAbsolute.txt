@@ -10,3 +10,15 @@ C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csp
 C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.dll
 C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.pdb
 C:\Users\USER\source\repos\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csprojAssemblyReference.cache
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\Intertazz.Data.dll.config
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\Intertazz.Data.dll
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\Intertazz.Data.pdb
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.dll
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.xml
+D:\Repositorios\Intertazz\Intertazz.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repositorios\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csprojAssemblyReference.cache
+D:\Repositorios\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csproj.CoreCompileInputs.cache
+D:\Repositorios\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.csproj.CopyComplete
+D:\Repositorios\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.dll
+D:\Repositorios\Intertazz\Intertazz.Data\obj\Debug\Intertazz.Data.pdb

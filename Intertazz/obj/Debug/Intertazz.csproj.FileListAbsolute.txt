@@ -28,3 +28,13 @@ C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.CopyCo
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.exe
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.pdb
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.frmProducto.resources
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\EntityFramework.dll
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\Intertazz.Data.dll
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\Intertazz.Data.pdb
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\Intertazz.Data.dll.config
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\EntityFramework.xml
+D:\Repositorios\Intertazz\Intertazz\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.frmProducto.resources
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.frmMarca.resources
+D:\Repositorios\Intertazz\Intertazz\obj\Debug\Intertazz.csproj.CopyComplete

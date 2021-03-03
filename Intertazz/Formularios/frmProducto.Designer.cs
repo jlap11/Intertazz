@@ -181,7 +181,7 @@ namespace Intertazz.Formularios
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // frmMarca
+            // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +192,7 @@ namespace Intertazz.Formularios
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmMarca";
+            this.Name = "frmProducto";
             this.Text = "frmMarca";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

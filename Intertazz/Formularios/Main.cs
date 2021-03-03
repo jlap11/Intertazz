@@ -16,66 +16,115 @@ namespace Intertazz.Formularios
         public Main()
         {
             InitializeComponent();
-            
+            PersonalizarDiseno();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        #region Personalizacion Formulario
+        private Form activeForm = null;
+        private void PersonalizarDiseno()
         {
-            Application.Exit();
+            try
+            {
+                pnlSubProduct.Visible = false;
+            }
+            catch (Exception ex)
+            { 
+                //Crear Alerta
+            }
         }
-
-       
-        private void btnMaximizar_Click(object sender, EventArgs e)
+        private void OcultarSubMenu()
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnMaximizar.Visible = false;
-            btnRestaurar .Visible = true;
+            try
+            {
+                if (pnlSubProduct.Visible) { pnlSubProduct.Visible = false; }
+            }
+            catch (Exception ex)
+            { 
+                //Crear Alerta
+            }
         }
-
-        private void btnRestaurar_Click(object sender, EventArgs e)
+        private void MostrarSubmenu(Panel subMenu) 
         {
-            this.WindowState = FormWindowState.Normal;
-            btnRestaurar.Visible = false;
-            btnMaximizar.Visible = true;           
+            try
+            {
+                if (!subMenu.Visible)
+                {
+                    OcultarSubMenu();
+                    subMenu.Visible = true;
+                }
+                else
+                {
+                    subMenu.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Crear Alerta
+            }
         }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        private void AbrirFormEnPanel(Form formhija)
         {
-            this.WindowState = FormWindowState.Minimized;
+            try
+            {
+                if (activeForm != null) { activeForm.Close(); }
+                activeForm = formhija;
+                formhija.TopLevel = false;
+
+                if (this.PContenedor.Controls.Count > 0)
+                    this.PContenedor.Controls.RemoveAt(0);
+                Form fh = formhija as Form;
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.PContenedor.Controls.Add(fh);
+                this.PContenedor.Tag = fh;
+                fh.Show();
+            } catch(Exception ex)
+            {
+                //Crear Alerta
+            }
         }
 
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
+        #endregion
 
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int vMsg, int wParam, int lparam);
-
-        private void PBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {            
-                ReleaseCapture();
-                SendMessage(this.Handle, 0x112, 0xf012,0); 
-        }
-
+        #region Eventos
+        #region Menu Productos
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmProducto());
+            try
+            {
+                MostrarSubmenu(pnlSubProduct);
+            }
+            catch (Exception ex)
+            { 
+              //Crear  Alerta  
+            }
         }
-        private void AbrirFormEnPanel(object formhija)
+        private void btnNewProduct_Click(object sender, EventArgs e)
         {
-            if (this.PContenedor.Controls.Count > 0)
-                this.PContenedor.Controls.RemoveAt(0);
-            Form fh = formhija as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.PContenedor.Controls.Add(fh);
-            this.PContenedor.Tag = fh;
-            fh.Show();
-
+            try
+            {
+                AbrirFormEnPanel(new frmProducto());
+                OcultarSubMenu();
+            }
+            catch (Exception ex)
+            { 
+                //Crear Alerta
+            }
         }
-
+        #endregion
+        #region Menu Inventario
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmMarca());
+            try
+            {
+                AbrirFormEnPanel(new frmMarca());
+            }
+            catch (Exception Ex)
+            { 
+                //Crear Alerta
+            }
         }
+        #endregion
+        #endregion
     }
 }

@@ -27,5 +27,10 @@ namespace Presentacion.Forms
             //ShowProducts();
             //ShowTotal();
         }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

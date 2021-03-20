@@ -18,7 +18,7 @@ namespace Intertazz.Formularios
         {
             InitializeComponent();
             CargarConsultaInicial();
-            lblErrorCrear.Visible = false;
+            
         }
         private void CargarConsultaInicial()
         {
@@ -27,40 +27,6 @@ namespace Intertazz.Formularios
             dgvMarcas.Columns["Activo"].Visible=false;
             dgvMarcas.Columns["IdMarca"].HeaderText = "Cod. Marca";
             dgvMarcas.Columns["IdMarca"].ReadOnly =true;
-        }
-
-        private void btnCrear_Click_1(object sender, EventArgs e)
-        {
-            if (txtCrearNombre.Text.Trim() != "")
-            {
-                lblErrorCrear.Visible = false;
-                Marca marca = new Marca();
-                marca.Nombre = txtCrearNombre.Text.Trim();
-                marca = obj.CrearMarca(marca);
-                CargarConsultaInicial();
-                txtCrearNombre.Text = "";
-                notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(25000, "¡Registrado!", "Registro insertado correctamente",
-                    ToolTipIcon.Info);
-            }
-            else
-            {
-                lblErrorCrear.Visible = true;
-            }
-        }
-
-        private void btnNuevo_Click_1(object sender, EventArgs e)
-        {
-            if (btnNuevo.Text == "Nuevo")
-            {
-                pnlNuevo.Size = new Size(800, 107);
-                btnNuevo.Text = "Cancelar";
-            }
-            else
-            {
-                pnlNuevo.Size = new Size(800, 32);
-                btnNuevo.Text = "Nuevo";
-            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -107,7 +73,7 @@ namespace Intertazz.Formularios
             obj.ActualizarMarca(marca);
             CargarConsultaInicial();
             notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(25000, "¡Modificado!", "Registro modificado correctamente",
+            notifyIcon1.ShowBalloonTip(20000, "¡Modificado!", "Registro modificado correctamente",
                 ToolTipIcon.Info);
         }
 
@@ -119,7 +85,7 @@ namespace Intertazz.Formularios
             obj.EliminarMarca(marca);
             CargarConsultaInicial();
             notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(25000, "¡Eliminado!", "Registro eliminado correctamente",
+            notifyIcon1.ShowBalloonTip(20000, "¡Eliminado!", "Registro eliminado correctamente",
                 ToolTipIcon.Info);
         }
 

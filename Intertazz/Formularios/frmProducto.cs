@@ -7,65 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Intertazz.Data;
+using Views;
 
-namespace Intertazz.Formularios
+namespace Presentacion.Forms
 {
-    public partial class frmProducto : Form
+    public partial class Products : Form
     {
-        Bussiness obj = new Bussiness();
-        public frmProducto()
+        public Products()
         {
             InitializeComponent();
-            CargarConsultaInicial();
-            lblErrorCrear.Visible = false;
-        }
-        private void CargarConsultaInicial()
-        {
-
-            dgvMarcas.DataSource = obj.ObtenerMarca();
-            dgvMarcas.Columns["Activo"].Visible=false;
-            dgvMarcas.Columns["IdMarca"].HeaderText = "Cod. Marca";
+          
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void btnNewProduct_Click(object sender, EventArgs e)
         {
-            if (txtCrearNombre.Text.Trim() != "")
-            {
-                lblErrorCrear.Visible = false;
-                Marca marca = new Marca();
-                marca.Nombre = txtCrearNombre.Text.Trim();
-                marca = obj.CrearMarca(marca);
-                MessageBox.Show( "Se ha registrado la marca: " + marca.Nombre + " con código " + marca.IdMarca.ToString(), "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarConsultaInicial();
-                txtCrearNombre.Text = "";
-            }
-            else
-            {
-                lblErrorCrear.Visible = true;
-            }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            if (btnNuevo.Text == "Nuevo")
-            {
-                pnlNuevo.Size = new Size(800, 107);
-                btnNuevo.Text = "Cancelar";
-            }
-            else
-            {
-                pnlNuevo.Size = new Size(800, 32);
-                btnNuevo.Text = "Nuevo";
-            }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            Marca marca = new Marca();
-            marca.Nombre = txtConsNombre.Text;
-            marca.IdMarca = Convert.ToInt32(txtConsCod.Text);
-            dgvMarcas.DataSource= obj.ObtenerMarca(marca);
+            productMaintenanceView frm = new productMaintenanceView();
+            frm.ShowDialog();
+           // frm.Update = false;
+            //ShowProducts();
+            //ShowTotal();
         }
     }
 }

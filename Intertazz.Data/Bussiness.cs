@@ -384,7 +384,7 @@ namespace Intertazz.Data
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             { Inventario InventarioModificar = context.Inventario.Where(x => x.IdInventario == Inventario.IdInventario).FirstOrDefault(); InventarioModificar.Activo = false; context.SaveChanges(); return InventarioModificar; }
         }
-        public List<Inventario> ObtenerInventario(Inventario Inventario)
+        public List<Inventario> ObtenerInventario(Inventario Inventario= null)
         {
             using (EFIntertazzModelContainer context = new EFIntertazzModelContainer())
             {

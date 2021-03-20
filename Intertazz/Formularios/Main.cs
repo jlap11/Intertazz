@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
+
 
 namespace Intertazz.Formularios
 {
@@ -16,66 +10,44 @@ namespace Intertazz.Formularios
         public Main()
         {
             InitializeComponent();
+        }
+        #region Personalizacion
+        private void Main_Load(object sender, EventArgs e)
+        {
             
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            informationView message = new informationView("¿SEGURO QUE DESEA SALIR?");
+            DialogResult result = message.ShowDialog();
+            if (result == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+
         }
 
-       
-        private void btnMaximizar_Click(object sender, EventArgs e)
+        private Form FormActive = null;
+        private void showFormInWrapper(Form FormSon)
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnMaximizar.Visible = false;
-            btnRestaurar .Visible = true;
-        }
-
-        private void btnRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnRestaurar.Visible = false;
-            btnMaximizar.Visible = true;           
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int vMsg, int wParam, int lparam);
-
-        private void PBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {            
-                ReleaseCapture();
-                SendMessage(this.Handle, 0x112, 0xf012,0); 
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new frmProducto());
-        }
-        private void AbrirFormEnPanel(object formhija)
-        {
+            if (FormActive != null)
+                FormActive.Close();
+            FormActive = FormSon;
+            FormSon.TopLevel = false;
             if (this.PContenedor.Controls.Count > 0)
                 this.PContenedor.Controls.RemoveAt(0);
-            Form fh = formhija as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.PContenedor.Controls.Add(fh);
-            this.PContenedor.Tag = fh;
-            fh.Show();
-
+            FormSon.Dock = DockStyle.Fill;
+            PContenedor.Controls.Add(FormSon);
+            PContenedor.Tag = FormSon;
+            FormSon.BringToFront();
+            FormSon.Show();
         }
-
-        private void btnInventario_Click(object sender, EventArgs e)
+        #endregion
+        #region Eventos
+        private void btnProduct_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmMarca());
+            showFormInWrapper(new frmProducto());
         }
+        #endregion
     }
 }

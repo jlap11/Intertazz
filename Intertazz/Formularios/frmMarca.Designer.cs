@@ -40,12 +40,6 @@ namespace Intertazz.Formularios
             this.txtConsCod = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pnlNuevo = new System.Windows.Forms.Panel();
-            this.lblErrorCrear = new System.Windows.Forms.Label();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCrearNombre = new System.Windows.Forms.TextBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
@@ -53,7 +47,6 @@ namespace Intertazz.Formularios
             this.groupBox1.SuspendLayout();
             this.pnlAtr.SuspendLayout();
             this.pnlCod.SuspendLayout();
-            this.pnlNuevo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +67,7 @@ namespace Intertazz.Formularios
             this.groupBox1.Controls.Add(this.pnlCod);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(12, 113);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 122);
             this.groupBox1.TabIndex = 3;
@@ -143,75 +136,15 @@ namespace Intertazz.Formularios
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 295);
+            this.label4.Location = new System.Drawing.Point(314, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Marcas registradas";
             // 
-            // pnlNuevo
-            // 
-            this.pnlNuevo.Controls.Add(this.lblErrorCrear);
-            this.pnlNuevo.Controls.Add(this.btnCrear);
-            this.pnlNuevo.Controls.Add(this.label2);
-            this.pnlNuevo.Controls.Add(this.txtCrearNombre);
-            this.pnlNuevo.Controls.Add(this.btnNuevo);
-            this.pnlNuevo.Location = new System.Drawing.Point(3, 7);
-            this.pnlNuevo.Name = "pnlNuevo";
-            this.pnlNuevo.Size = new System.Drawing.Size(800, 32);
-            this.pnlNuevo.TabIndex = 6;
-            // 
-            // lblErrorCrear
-            // 
-            this.lblErrorCrear.AutoSize = true;
-            this.lblErrorCrear.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblErrorCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorCrear.Location = new System.Drawing.Point(488, 84);
-            this.lblErrorCrear.Name = "lblErrorCrear";
-            this.lblErrorCrear.Size = new System.Drawing.Size(204, 13);
-            this.lblErrorCrear.TabIndex = 13;
-            this.lblErrorCrear.Text = "¡Debe completar todos los campos!";
-            this.lblErrorCrear.Visible = false;
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.Location = new System.Drawing.Point(704, 79);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnCrear.TabIndex = 12;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Nombre";
-            // 
-            // txtCrearNombre
-            // 
-            this.txtCrearNombre.Location = new System.Drawing.Point(133, 42);
-            this.txtCrearNombre.Name = "txtCrearNombre";
-            this.txtCrearNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtCrearNombre.TabIndex = 10;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(9, 5);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 9;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
-            // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(587, 279);
+            this.btnModificar.Location = new System.Drawing.Point(265, 404);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 7;
@@ -221,7 +154,7 @@ namespace Intertazz.Formularios
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(587, 325);
+            this.btnEliminar.Location = new System.Drawing.Point(468, 404);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 8;
@@ -233,7 +166,7 @@ namespace Intertazz.Formularios
             // 
             this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(223, 257);
+            this.dgvMarcas.Location = new System.Drawing.Point(234, 204);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.Size = new System.Drawing.Size(335, 170);
             this.dgvMarcas.TabIndex = 9;
@@ -253,7 +186,6 @@ namespace Intertazz.Formularios
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.pnlNuevo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -264,8 +196,6 @@ namespace Intertazz.Formularios
             this.pnlAtr.PerformLayout();
             this.pnlCod.ResumeLayout(false);
             this.pnlCod.PerformLayout();
-            this.pnlNuevo.ResumeLayout(false);
-            this.pnlNuevo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,12 +210,6 @@ namespace Intertazz.Formularios
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtConsCod;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel pnlNuevo;
-        private System.Windows.Forms.Label lblErrorCrear;
-        private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCrearNombre;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Panel pnlCod;
         private System.Windows.Forms.Panel pnlAtr;
         private System.Windows.Forms.Button btnModificar;

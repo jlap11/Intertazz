@@ -40,11 +40,17 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\packages\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks">
+      <HintPath>..\packages\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -64,6 +70,84 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\ctlPrecioCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlPrecioCrear.Designer.cs">
+      <DependentUpon>ctlPrecioCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctlFacturaCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlFacturaCrear.Designer.cs">
+      <DependentUpon>ctlFacturaCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctlInventarioCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlInventarioCrear.Designer.cs">
+      <DependentUpon>ctlInventarioCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctlStockCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlStockCrear.Designer.cs">
+      <DependentUpon>ctlStockCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctlTipoProductoCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlTipoProductoCrear.Designer.cs">
+      <DependentUpon>ctlTipoProductoCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctlCategoriaCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlCategoriaCrear.Designer.cs">
+      <DependentUpon>ctlCategoriaCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctlMarcaCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctlMarcaCrear.Designer.cs">
+      <DependentUpon>ctlMarcaCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPrecio.Designer.cs">
+      <DependentUpon>frmPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFactura.Designer.cs">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInventario.Designer.cs">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmStock.Designer.cs">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTipoProducto.Designer.cs">
+      <DependentUpon>frmTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCategoria.Designer.cs">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,22 +160,88 @@
     <Compile Include="Formularios\frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\informationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\informationView.designer.cs">
+      <DependentUpon>informationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Main.Designer.cs">
+    <Compile Include="Formularios\Main.designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MainAnterior.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MainAnterior.Designer.cs">
+      <DependentUpon>MainAnterior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\successView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\successView.designer.cs">
+      <DependentUpon>successView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\ctlPrecioCrear.resx">
+      <DependentUpon>ctlPrecioCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctlFacturaCrear.resx">
+      <DependentUpon>ctlFacturaCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctlInventarioCrear.resx">
+      <DependentUpon>ctlInventarioCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctlStockCrear.resx">
+      <DependentUpon>ctlStockCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctlTipoProductoCrear.resx">
+      <DependentUpon>ctlTipoProductoCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctlCategoriaCrear.resx">
+      <DependentUpon>ctlCategoriaCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctlMarcaCrear.resx">
+      <DependentUpon>ctlMarcaCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPrecio.resx">
+      <DependentUpon>frmPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmFactura.resx">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmInventario.resx">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmStock.resx">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTipoProducto.resx">
+      <DependentUpon>frmTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCategoria.resx">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\informationView.resx">
+      <DependentUpon>informationView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MainAnterior.resx">
+      <DependentUpon>MainAnterior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\successView.resx">
+      <DependentUpon>successView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

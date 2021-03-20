@@ -46,3 +46,4 @@ C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.M
 C:\Users\USER\source\repos\Intertazz\Intertazz\bin\Debug\Bunifu_UI_v1.52.dll
 C:\Users\USER\source\repos\Intertazz\Intertazz\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.successView.resources
+C:\Users\USER\source\repos\Intertazz\Intertazz\obj\Debug\Intertazz.Formularios.productMaintenanceView.resources

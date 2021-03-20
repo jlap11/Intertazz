@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Views;
 
-namespace Presentacion.Forms
+
+namespace Intertazz.Formularios
 {
-    public partial class Products : Form
+    public partial class frmProducto : Form
     {
-        public Products()
+        public frmProducto()
         {
             InitializeComponent();
           

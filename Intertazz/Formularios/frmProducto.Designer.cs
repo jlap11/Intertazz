@@ -1,7 +1,7 @@
 ﻿
-namespace Presentacion.Forms
+namespace Intertazz.Formularios
 {
-    partial class Products
+    partial class frmProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Presentacion.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -449,7 +449,7 @@ namespace Presentacion.Forms
             this.dgbProducs.Name = "dgbProducs";
             this.dgbProducs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgbProducs.RowHeadersVisible = false;
-            this.dgbProducs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            //this.dgbProducs.SelectionMode = System.Windows.Forms.DataGridIntertazz.FormularioselectionMode.CellSelect;
             this.dgbProducs.Size = new System.Drawing.Size(937, 240);
             this.dgbProducs.TabIndex = 12;
             // 

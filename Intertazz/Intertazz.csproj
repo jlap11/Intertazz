@@ -178,6 +178,12 @@
     <Compile Include="Formularios\MainAnterior.Designer.cs">
       <DependentUpon>MainAnterior.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\productMaintenanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\productMaintenanceView.designer.cs">
+      <DependentUpon>productMaintenanceView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\successView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MainAnterior.resx">
       <DependentUpon>MainAnterior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\productMaintenanceView.resx">
+      <DependentUpon>productMaintenanceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\successView.resx">
       <DependentUpon>successView.cs</DependentUpon>
